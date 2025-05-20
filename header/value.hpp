@@ -1,4 +1,3 @@
-// Light weight scalar value class 
 #include <cmath>
 
 class Value {
