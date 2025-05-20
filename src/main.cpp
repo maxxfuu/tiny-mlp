@@ -1,5 +1,5 @@
-#include "../header/mlp.hpp"
 #include <iostream>
+#include "../header/nn.hpp"
 
 int main() {
     // Create a simple neural network with architecture: 2 -> 3 -> 1
@@ -7,13 +7,13 @@ int main() {
     MLP network(architecture);
 
     // Create input values
-    std::vector<Value> inputs = {Value(1.0), Value(0.5)};
+    std::vector<Value> inputs = {Value(1.0, [](){}, ""), Value(0.5, [](){}, "")};
 
     // Perform forward pass
     std::vector<Value> output = network.forward_pass(inputs);
 
     // Print the output
-    std::cout << "Network output: " << output[0].data << "%" << std::endl;
+    std::cout << "Network output: " << output[-1].data << "%" << std::endl;
 
     return 0;
 } 
